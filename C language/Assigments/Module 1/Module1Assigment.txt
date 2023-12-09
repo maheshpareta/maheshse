@@ -1,0 +1,6 @@
+ What is software? What is software engineering?
+ Explain types of software
+ What is SDLC? Explain each phase of SDLC
+ What is DFD? Create a DFD diagram on Flipkart
+ What is Flow chart? Create a flowchart to make addition of two numbers
+ What is Use case Diagram? Create a use-case on bill payment on paytm.
