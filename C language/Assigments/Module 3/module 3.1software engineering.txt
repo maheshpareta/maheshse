@@ -1,0 +1,211 @@
+01   Display This Information using printf
+     1. Your Name
+     2. Your Birth date
+     3. Your Age
+     4. Your Address
+ANS. Certainly! Here's a simple example using printf to display the information:
+
+
+
+     #include <stdio.h>
+
+     int main() {
+      // Replace these placeholders with your actual information
+      char name[] = "John Doe";
+      char birthDate[] = "January 1, 1990";
+      int age = 33;  // Replace with your actual age
+      char address[] = "123 Main Street, City, Country";
+
+      // Display the information using printf
+      printf("1. Your Name: %s\n", name);
+      printf("2. Your Birth date: %s\n", birthDate);
+      printf("3. Your Age: %d\n", age);
+      printf("4. Your Address: %s\n", address);
+
+      return 0;
+}
+      The %s format specifier is used for strings, and %d is used for integers in printf.
+
+02   Write a program to make Simple calculator (to make addition, subtraction,
+     multiplication, division and modulo)
+   
+ANS Here are examples of simple programs in C for the tasks you described:
+
+    Simple Calculator:
+
+    #include <stdio.h>
+
+    int main() {
+
+    double num1, num2, result;
+    char operator;
+
+    printf("Enter first number: ");
+    scanf("%lf", &num1);
+
+    printf("Enter operator (+, -, *, /, %%): ");
+    scanf(" %c", &operator);
+
+    printf("Enter second number: ");
+    scanf("%lf", &num2);
+
+    switch (operator) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            if (num2 != 0) {
+                result = num1 / num2;
+            } else {
+                printf("Error! Division by zero is not allowed.\n");
+                return 1; // Exit with an error code
+            }
+            break;
+        case '%':
+            if (num2 != 0) {
+                result = fmod(num1, num2);
+            } else {
+                printf("Error! Modulo by zero is not allowed.\n");
+                return 1; // Exit with an error code
+            }
+            break;
+        default:
+            printf("Error! Invalid operator.\n");
+            return 1; // Exit with an error code
+    }
+
+    printf("Result: %lf\n", result);
+
+    return 0;
+}
+   
+   
+03   WAP to find area of circle, rectangle and triangle
+ANS. Area of Circle, Rectangle, and Triangle:
+
+   #include <stdio.h>
+   #include <math.h>
+
+   int main() {
+
+    double radius, length, width, base, height, area_circle, area_rectangle, area_triangle;
+
+    // Area of Circle
+    printf("Enter the radius of the circle: ");
+    scanf("%lf", &radius);
+    area_circle = M_PI * pow(radius, 2);
+    printf("Area of the circle: %lf\n", area_circle);
+
+    // Area of Rectangle
+    printf("Enter the length of the rectangle: ");
+    scanf("%lf", &length);
+    printf("Enter the width of the rectangle: ");
+    scanf("%lf", &width);
+    area_rectangle = length * width;
+    printf("Area of the rectangle: %lf\n", area_rectangle);
+
+    // Area of Triangle
+    printf("Enter the base of the triangle: ");
+    scanf("%lf", &base);
+    printf("Enter the height of the triangle: ");
+    scanf("%lf", &height);
+    area_triangle = 0.5 * base * height;
+    printf("Area of the triangle: %lf\n", area_triangle);
+
+    return 0;
+}
+   
+04  WAP to find simple interest
+ANS. Simple Interest:
+
+    #include <stdio.h>
+
+    int main() {
+
+    double principal, rate, time, simple_interest;
+
+    printf("Enter principal amount: ");
+    scanf("%lf", &principal);
+
+    printf("Enter rate of interest: ");
+    scanf("%lf", &rate);
+
+    printf("Enter time in years: ");
+    scanf("%lf", &time);
+
+    simple_interest = (principal * rate * time) / 100;
+
+    printf("Simple Interest: %lf\n", simple_interest);
+
+    return 0;
+}
+  
+05  WAP to check if the given year is a leap year or not.  
+
+ANS.Leap Year Check:
+
+    #include <stdio.h>
+
+    int main() {
+
+    int year;
+
+    printf("Enter a year: ");
+    scanf("%d", &year);
+
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        printf("%d is a leap year.\n", year);
+    } else {
+        printf("%d is not a leap year.\n", year);
+    }
+
+    return 0;
+}
+   
+06  WAP to convert years into days and days into years
+ANS.Convert Years into Days and Days into Years:
+
+    #include <stdio.h>
+
+    int main() {
+    
+    int years, days;
+
+    // Convert Years into Days
+    printf("Enter number of years: ");
+    scanf("%d", &years);
+    days = years * 365;
+    printf("%d years is equal to %d days.\n", years, days);
+
+    // Convert Days into Years
+    printf("Enter number of days: ");
+    scanf("%d", &days);
+    years = days / 365;
+    printf("%d days is approximately equal to %d years.\n", days, years);
+
+    return 0;
+}
+
+
+    Feel free to modify these programs based on your specific needs and requirements.
+
+
+  
+
+
+
+ 
+
+
+
+
+
+
+ 
+

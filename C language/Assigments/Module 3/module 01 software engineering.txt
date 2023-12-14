@@ -1,0 +1,151 @@
+01   what is software? what is software engineering?
+Ans. software refers to the programs, data, and instructions that enable a computer to perform specifics tasks. It encompasses everything from operating                            
+     sytems and applications to games and utilities.
+     
+     software engineering is the systematic applications of engineering principles to the design, development, testing, and maintenance of software.It 
+     involves a disciplined and structured approach to software development, aiming to produce high-quality, reliable and, and maintainable software with in 
+     given constrains such as time and budget. Software engineering use various methodologies and tools to manage the complexities of the development process.
+
+02   explain types of software
+ANS. Software can be broadly categorized into two main types:
+   
+   A. SYSTEM SOFTWARE:
+
+       OPERATING SYSTEM: manage hardware resources and provide services for computer programs.
+       
+       DEVICE DRIVERS: facilitet communication between the operating system and hardware devices.
+      
+       UTILITIES: performs specific takes related to system management, maintenance, and optimization.
+  
+   B.  APPLICATION SOFTWARE:
+
+       PRODUCTIVITY SOFTWARE: includes word processors, spreadshets, and presentation software.
+       
+       GRAFICS SOFTWARE: used for creating and editing images and multimedia content.
+  
+       MEDIA PLAYERS: play audio and video files.
+
+       WEB BROWSERS: enable access to the word wide web.
+
+       GAMES: provide entertainment through interactive gameplay.
+
+       COMMUNICATION SOFTWARE: facilitete communication, such as email clients and instant messaging applications.
+
+03   What is SDLC ? Exlain each phase of SDLC
+ANS. SDLC or software Development life Cycle, is a systematic process for planning, creating, testing, deploying and maintaining software. It consists of 
+     several phases, each with its own set of activities and deliverables. The typical phases of SDLC are:
+
+   A.  REQUIREMENTS GATHERING AND ANALYSIS:
+       
+       Identify and gather requirements from stakeholders.
+       Analyze and document these requirements to understand the scope of the project.
+
+   B.  SYSTEM DESIGN:
+
+       Create a detailed system design based on the gathered requirements.
+       Define achitecture, componenets, modules, and their relationships.
+
+   C.  IMPLEMENTATION (CODING):
+
+       Write code based on the system design specifications. 
+       Follow coding standards and based practices to ensure maintainability.
+   
+   D.  TESTING:
+
+       Conduct various level of testing (unit testing, integration testing, system testing) to detect and fix defects.
+       Ensure the software meets the specified requirement.
+
+   E.  DEPLOYMENT (or implimentation):
+
+       Deploy the software for use in a live invironment.Train end-users and provide documentation as needed.
+
+   F.  MAINTENANCE AND SUPPORT: 
+
+       Address issues that arise in the live environment. Make updates or enhancements to the software as required.
+
+04   What is DFD? Create a DFD diagram on flipkart
+ANS. This is a basic representation, and in a real-word scenario, a dfd for  an e-commers  system like flipkart would be more detailed, including additional 
+     processes and data flows.
+
+   A.  PROCESSES:
+
+       ORDER PROCESSING: Represent the main process of handling customer orders.
+
+   B.  DATA STORES:
+
+       PRODUCT DATABASE: stores information about products, including availability and details.
+       ORDER DATABASE: keeps track of customer orders.
+
+   C.  EXTERNAL ENTITIES:
+
+       CUSTOMER: initiates the order process by interecting with the system.
+       SUPPLIER: provides information about product availability. 
+  
+   D.  DATA FLOWS:
+
+       ORDER REQUEST: Flows from the customer to order processing 
+       PRODUCT INFORMATION: Flows from inventory management to order processing and vice versa. 
+       ORDER CONFORMATION: Flows from order processing to the customer.
+
+05   What is flow chart? create a flow chart to make addition of two numbers
+ANS. A flow chart is a diagrammaic representation of a process or algorithm using various shapes to represent different steps or actions.
+     flow chart addition of two numbers:
+
+                             START
+
+                             Input number A
+
+                             INPUT NUMER  B
+
+                             PROCESS: ADD A AND B
+
+                             OUT PUT RESULT
+
+                             END
+
+    In this flow chart:
+
+  > START and END represent the beggining and end of the process.
+  > INPUT number A and INPUT number B are represented by parallelograms, indicating input steps.
+  > The process of adding A and B is represented by a rectangle. 
+  > OUTPUT RESULT is another parallelogram indicating an output step.
+
+06   What is Use case diagram? create a use-case on bill payment on paytm
+ANS. A Use case diagram is a visual representation of the functional requirements of a system, showing the interections between external actors  
+    (user or systems) and the system itself. In the context of paytm, here's a simplified use case diagram for the "Bill payment" process:
+
+
+                                       paytm system
+
+
+                                   Actor    Actor:
+                                            Bill system
+
+
+                                   Use case:  Bill payment
+
+
+                                   Action:    Request Bill
+
+
+                                   Action:    process payment
+
+
+     In this diagram:
+
+  > "User" is an external actor interecting with the paytm system. 
+  > "Biller system" is another external actor representing the system that manages bill to be paid.
+  > "Bill payment" is the use case representing the overall process.
+  > "Request Bill and process Payment" are specific actions or functionalities within the "Bill payment" use case    
+
+      
+       
+   
+
+                
+
+      
+
+        
+
+              

@@ -1,0 +1,686 @@
+01  Write a program to find out the max number from given array using function 
+ANS C program that finds the maximum number in a given array using a function:
+
+    #include <stdio.h>
+
+    // Function to find the maximum number in an array
+    int findMax(int arr[], int size) {
+
+    int max = arr[0];
+
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    return max;
+}
+
+    int main() {
+
+    // Declare and initialize an array
+    int numbers[] = {12, 45, 67, 23, 56, 89, 34, 78};
+
+    // Calculate the size of the array
+    int size = sizeof(numbers) / sizeof(numbers[0]);
+
+    // Call the function to find the maximum
+    int maximum = findMax(numbers, size);
+
+    // Display the result
+    printf("The maximum number in the array is: %d\n", maximum);
+
+    return 0;
+}
+
+    In this program, the findMax function iterates through the array elements and keeps track of the maximum value. The main function declares an array,
+    calculates its size, calls the findMax function, and then prints the maximum value.
+
+02  WAP of Addition, Subtraction, Multiplication and Division using Switch
+    case.(Must Be Menu Driven)
+ANS C program that performs addition, subtraction, multiplication, and division using a menu-driven switch case:
+
+
+    #include <stdio.h>
+
+    int main() {
+
+    int choice;
+    double num1, num2, result;
+
+    do {
+        // Display the menu
+        printf("\nCalculator Menu:\n");
+        printf("1. Addition\n");
+        printf("2. Subtraction\n");
+        printf("3. Multiplication\n");
+        printf("4. Division\n");
+        printf("0. Exit\n");
+        printf("Enter your choice (0-4): ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                printf("Enter the first number: ");
+                scanf("%lf", &num1);
+                printf("Enter the second number: ");
+                scanf("%lf", &num2);
+                result = num1 + num2;
+                printf("Result: %.2lf\n", result);
+                break;
+            case 2:
+                printf("Enter the first number: ");
+                scanf("%lf", &num1);
+                printf("Enter the second number: ");
+                scanf("%lf", &num2);
+                result = num1 - num2;
+                printf("Result: %.2lf\n", result);
+                break;
+            case 3:
+                printf("Enter the first number: ");
+                scanf("%lf", &num1);
+                printf("Enter the second number: ");
+                scanf("%lf", &num2);
+                result = num1 * num2;
+                printf("Result: %.2lf\n", result);
+                break;
+            case 4:
+                printf("Enter the numerator: ");
+                scanf("%lf", &num1);
+                printf("Enter the denominator: ");
+                scanf("%lf", &num2);
+                // Check for division by zero
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    printf("Result: %.2lf\n", result);
+                } else {
+                    printf("Error! Division by zero is not allowed.\n");
+                }
+                break;
+            case 0:
+                printf("Exiting the program. Goodbye!\n");
+                break;
+            default:
+                printf("Invalid choice! Please choose a number between 0 and 4.\n");
+                break;
+        }
+
+    } while (choice != 0);
+
+    return 0;
+}
+
+03  WAP to find reverse of string using recursion 
+ANS A C program that finds the reverse of a string using recursion:
+
+
+    #include <stdio.h>
+    #include <string.h>
+
+    // Recursive function to reverse a string
+    void reverseString(char str[], int start, int end) {
+    if (start >= end) {
+        return;  // Base case: if the start index is greater than or equal to the end index
+    }
+
+    // Swap characters at start and end indices
+    char temp = str[start];
+    str[start] = str[end];
+    str[end] = temp;
+
+    // Recursively call the function with updated indices
+    reverseString(str, start + 1, end - 1);
+}
+
+    int main() {
+
+    char inputString[100];
+
+    // Get input from the user
+    printf("Enter a string: ");
+    scanf("%s", inputString);
+
+    // Find the length of the string
+    int length = strlen(inputString);
+
+    // Reverse the string using the recursive function
+    reverseString(inputString, 0, length - 1);
+
+    // Display the reversed string
+    printf("Reversed string: %s\n", inputString);
+
+    return 0;
+}
+
+04  WAP to find factorial using recursion
+ANs calculates the factorial of a number using recursion:
+
+
+    #include <stdio.h>
+
+    // Recursive function to calculate factorial
+     unsigned long long factorial(int n) {
+    // Base case: factorial of 0 is 1
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+
+        // Recursive case: n! = n * (n-1)!
+        return n * factorial(n - 1);
+    }
+}
+
+    int main() {
+
+    int number;
+
+    // Get input from the user
+    printf("Enter a non-negative integer: ");
+    scanf("%d", &number);
+
+    // Check if the number is non-negative
+    if (number < 0) {
+        printf("Error! Factorial is not defined for negative numbers.\n");
+    } else {
+        // Calculate and display the factorial
+        unsigned long long result = factorial(number);
+        printf("Factorial of %d = %llu\n", number, result);
+    }
+
+    return 0;
+}
+
+05  WAP to take two Array input from user and sort them in ascending or descending order as per user’s choice
+ANS  C program that takes two arrays as input from the user and sorts them in ascending or descending order based on the user's choice:
+
+
+    #include <stdio.h>
+
+    // Function to swap two integers
+    void swap(int *a, int *b) {
+
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+   // Function to perform bubble sort in ascending or descending order
+   void bubbleSort(int arr[], int size, int order) {
+    for (int i = 0; i < size - 1; ++i) {
+        for (int j = 0; j < size - i - 1; ++j) {
+            // Check order for sorting
+            if ((order == 1 && arr[j] > arr[j + 1]) || (order == 2 && arr[j] < arr[j + 1])) {
+                // Swap elements if they are in the wrong order
+                swap(&arr[j], &arr[j + 1]);
+            }
+        }
+    }
+}
+
+   // Function to print an array
+   void printArray(int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+    int main() {
+
+    int size;
+    int order;
+
+    // Get size of the arrays
+    printf("Enter the size of the arrays: ");
+    scanf("%d", &size);
+
+    int array1[size], array2[size];
+
+    // Get elements for the first array
+    printf("Enter %d elements for the first array:\n", size);
+    for (int i = 0; i < size; ++i) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &array1[i]);
+    }
+
+    // Get elements for the second array
+    printf("Enter %d elements for the second array:\n", size);
+    for (int i = 0; i < size; ++i) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &array2[i]);
+    }
+
+    // Get user's choice for sorting order
+    printf("Choose sorting order:\n");
+    printf("1. Ascending\n");
+    printf("2. Descending\n");
+    printf("Enter your choice (1 or 2): ");
+    scanf("%d", &order);
+
+    // Sort the arrays based on user's choice
+    bubbleSort(array1, size, order);
+    bubbleSort(array2, size, order);
+
+    // Display the sorted arrays
+    printf("Sorted array 1: ");
+    printArray(array1, size);
+
+    printf("Sorted array 2: ");
+    printArray(array2, size);
+
+    return 0;
+}
+
+06  WAP to make addition, Subtraction and multiplication of two matrix using 2-D Array 
+ANS Certainly! Below is a C program that takes input for two matrices from the user and performs addition, subtraction, and multiplication using 2-D arrays:
+
+
+    #include <stdio.h>
+
+    // Function to input a matrix
+    void inputMatrix(int rows, int columns, int matrix[rows][columns]) {
+    printf("Enter elements of the matrix:\n");
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
+            printf("Enter element [%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+}
+
+   // Function to display a matrix
+    void displayMatrix(int rows, int columns, int matrix[rows][columns]) {
+    printf("Matrix:\n");
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+   // Function to add two matrices
+   void addMatrices(int rows, int columns, int matrix1[rows][columns], int matrix2[rows][columns], int result[rows][columns]) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+}
+
+  // Function to subtract two matrices
+  void subtractMatrices(int rows, int columns, int matrix1[rows][columns], int matrix2[rows][columns], int result[rows][columns]) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
+            result[i][j] = matrix1[i][j] - matrix2[i][j];
+        }
+    }
+}
+
+  // Function to multiply two matrices
+  void multiplyMatrices(int rows1, int columns1, int matrix1[rows1][columns1], int rows2, int columns2, int matrix2[rows2][columns2], int result[rows1]             [columns2]) {
+
+    for (int i = 0; i < rows1; ++i) {
+        for (int j = 0; j < columns2; ++j) {
+            result[i][j] = 0;
+            for (int k = 0; k < columns1; ++k) {
+                result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+}
+
+    int main() {
+
+    int rows1, columns1, rows2, columns2;
+
+    // Get input for the first matrix
+    printf("Enter the number of rows for the first matrix: ");
+    scanf("%d", &rows1);
+    printf("Enter the number of columns for the first matrix: ");
+    scanf("%d", &columns1);
+
+    int matrix1[rows1][columns1];
+    inputMatrix(rows1, columns1, matrix1);
+
+    // Get input for the second matrix
+    printf("Enter the number of rows for the second matrix: ");
+    scanf("%d", &rows2);
+    printf("Enter the number of columns for the second matrix: ");
+    scanf("%d", &columns2);
+
+    int matrix2[rows2][columns2];
+    inputMatrix(rows2, columns2, matrix2);
+
+    // Check if matrices can be added, subtracted, and multiplied
+    if (rows1 == rows2 && columns1 == columns2) {
+        // Addition
+        int sumMatrix[rows1][columns1];
+        addMatrices(rows1, columns1, matrix1, matrix2, sumMatrix);
+        printf("\nAddition Result:\n");
+        displayMatrix(rows1, columns1, sumMatrix);
+
+        // Subtraction
+        int differenceMatrix[rows1][columns1];
+        subtractMatrices(rows1, columns1, matrix1, matrix2, differenceMatrix);
+        printf("\nSubtraction Result:\n");
+        displayMatrix(rows1, columns1, differenceMatrix);
+    } else {
+        printf("\nMatrices can't be added or subtracted due to different dimensions.\n");
+    }
+
+    if (columns1 == rows2) {
+        // Multiplication
+        int productMatrix[rows1][columns2];
+        multiplyMatrices(rows1, columns1, matrix1, rows2, columns2, matrix2, productMatrix);
+        printf("\nMultiplication Result:\n");
+        displayMatrix(rows1, columns2, productMatrix);
+    } else {
+        printf("\nMatrices can't be multiplied due to incompatible dimensions.\n");
+    }
+
+    return 0;
+}
+
+07  WAP Find out length of string without using inbuilt function
+ANS You can find the length of a string without using any inbuilt function:
+
+
+    #include <stdio.h>
+
+    // Function to find the length of a string without using inbuilt function
+    int findStringLength(char str[]) {
+    int length = 0;
+
+    // Iterate through the characters until null terminator is encountered
+    while (str[length] != '\0') {
+        length++;
+    }
+
+    return length;
+}
+
+    int main() {
+
+    char inputString[100];
+
+    // Get input from the user
+    printf("Enter a string: ");
+    scanf("%s", inputString);
+
+    // Calculate and display the length of the string
+    int length = findStringLength(inputString);
+    printf("Length of the string: %d\n", length);
+
+    return 0;
+}
+
+08  WAP to reverse a string and check that the string is palindrome or not
+ANS reverses a string and checks whether the original string is a palindrome or not:
+
+
+    #include <stdio.h>
+    #include <string.h>
+
+    // Function to reverse a string
+    void reverseString(char str[]) {
+    int length = strlen(str);
+
+    for (int i = 0; i < length / 2; i++) {
+        char temp = str[i];
+        str[i] = str[length - i - 1];
+        str[length - i - 1] = temp;
+    }
+}
+
+   // Function to check if a string is a palindrome
+   int isPalindrome(char str[]) {
+    int length = strlen(str);
+
+    for (int i = 0; i < length / 2; i++) {
+        if (str[i] != str[length - i - 1]) {
+            return 0; // Not a palindrome
+        }
+    }
+
+    return 1; // Palindrome
+}
+
+    int main() {
+
+    char inputString[100];
+
+    // Get input from the user
+    printf("Enter a string: ");
+    scanf("%s", inputString);
+
+    // Reverse the string
+    reverseString(inputString);
+
+    // Display the reversed string
+    printf("Reversed string: %s\n", inputString);
+
+    // Check if the original string is a palindrome
+    if (isPalindrome(inputString)) {
+        printf("The string is a palindrome.\n");
+    } else {
+        printf("The string is not a palindrome.\n");
+    }
+
+    return 0;
+}
+ 
+09  Write a program of structure employee that provides the following information -print and display empno, empname, address and age
+ANS Certainly! Here's an example C program that defines a structure for an employee with empno, empname, address, and age. The program provide
+    functionalities to input, display, and print information about the employee:
+
+
+    #include <stdio.h>
+
+    // Define the structure for an employee
+    struct Employee {
+
+    int empno;
+    char empname[50];
+    char address[100];
+    int age;
+};
+
+    // Function to input employee details
+    void inputEmployee(struct Employee *emp) {
+    printf("Enter Employee Number: ");
+    scanf("%d", &emp->empno);
+
+    printf("Enter Employee Name: ");
+    scanf("%s", emp->empname);
+
+    printf("Enter Employee Address: ");
+    scanf("%s", emp->address);
+
+    printf("Enter Employee Age: ");
+    scanf("%d", &emp->age);
+}
+
+    // Function to display employee details
+    void displayEmployee(const struct Employee *emp) {
+    printf("\nEmployee Number: %d\n", emp->empno);
+    printf("Employee Name: %s\n", emp->empname);
+    printf("Employee Address: %s\n", emp->address);
+    printf("Employee Age: %d\n", emp->age);
+}
+
+    // Function to print employee details
+    void printEmployee(const struct Employee *emp) {
+    printf("\nEmployee Details:\n");
+    printf("EmpNo: %d, EmpName: %s, Address: %s, Age: %d\n", emp->empno, emp->empname, emp->address, emp->age);
+}
+
+    int main() {
+
+    // Declare an employee structure variable
+    struct Employee emp1;
+
+    // Input details for the employee
+    printf("Enter details for Employee:\n");
+    inputEmployee(&emp1);
+
+    // Display details of the employee
+    displayEmployee(&emp1);
+
+    // Print details of the employee
+    printEmployee(&emp1);
+
+    return 0;
+}
+
+10  Write a program of structure for five employee that provides the following information -print and display empno, empname, address and age 
+ANS Certainly! Here's an example C program that defines a structure for five employees and provides functionalities to input, display, and print information             
+    about each employee:
+
+
+    #include <stdio.h>
+
+    // Define the structure for an employee
+    struct Employee {
+    int empno;
+    char empname[50];
+    char address[100];
+    int age;
+};
+
+    // Function to input details for an array of employees
+    void inputEmployees(struct Employee employees[], int size) {
+    for (int i = 0; i < size; ++i) {
+        printf("Enter details for Employee %d:\n", i + 1);
+        printf("Employee Number: ");
+        scanf("%d", &employees[i].empno);
+
+        printf("Employee Name: ");
+        scanf("%s", employees[i].empname);
+
+        printf("Employee Address: ");
+        scanf("%s", employees[i].address);
+
+        printf("Employee Age: ");
+        scanf("%d", &employees[i].age);
+    }
+}
+
+      // Function to display details of an array of employees
+      void displayEmployees(const struct Employee employees[], int size) {
+    for (int i = 0; i < size; ++i) {
+        printf("\nDetails for Employee %d:\n", i + 1);
+        printf("Employee Number: %d\n", employees[i].empno);
+        printf("Employee Name: %s\n", employees[i].empname);
+        printf("Employee Address: %s\n", employees[i].address);
+        printf("Employee Age: %d\n", employees[i].age);
+    }
+}
+
+    // Function to print details of an array of employees
+    void printEmployees(const struct Employee employees[], int size) {
+    printf("\nEmployee Details for All Employees:\n");
+    for (int i = 0; i < size; ++i) {
+        printf("EmpNo: %d, EmpName: %s, Address: %s, Age: %d\n",
+               employees[i].empno, employees[i].empname, employees[i].address, employees[i].age);
+    }
+}
+
+    int main() {
+
+    const int numEmployees = 5;
+
+    // Declare an array of employee structure variables
+    struct Employee employees[numEmployees];
+
+    // Input details for all employees
+    inputEmployees(employees, numEmployees);
+
+    // Display details of all employees
+    displayEmployees(employees, numEmployees);
+
+    // Print details of all employees
+    printEmployees(employees, numEmployees);
+
+    return 0;
+}
+
+11  WAP to show difference between Structure and Union. 
+ANS In C, both structures and unions are used to define custom data types that can hold multiple variables of different data types. However, they differ in how they allocate memory and how the member variables share that memory.
+
+Structure
+
+   #include <stdio.h>
+
+   // Define a structure
+    struct Person {
+    char name[50];
+    int age;
+    float salary;
+};
+
+   int main() {
+    // Declare a structure variable
+    struct Person person1;
+
+    // Access and assign values to structure members
+    strcpy(person1.name, "John");
+    person1.age = 30;
+    person1.salary = 50000.0;
+
+    // Accessing structure members
+    printf("Name: %s\n", person1.name);
+    printf("Age: %d\n", person1.age);
+    printf("Salary: %.2f\n", person1.salary);
+
+    return 0;
+}
+Union:
+
+In a union, all member variables share the same memory location.
+Memory is allocated that is large enough to hold the largest member of the union.
+Only one member of the union can be active (contain a value) at a time.
+Members of a union can have different data types.
+Here's an example of a union:
+
+   #include <stdio.h>
+
+   // Define a union
+   union Number {
+
+    int integer;
+    float floating;
+};
+
+   int main() {
+
+    // Declare a union variable
+    union Number num;
+
+    // Assign values to union members
+    num.integer = 42;
+
+    // Accessing union members
+    printf("Integer: %d\n", num.integer);
+
+    // Assign a value to another member
+    num.floating = 3.14;
+
+    // Accessing union members after the change
+    printf("Floating: %.2f\n", num.floating);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
